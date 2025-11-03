@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>InsectVerse Insect Classifier</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🦋</h1>
+    <h1>🪲 InsectVerse 🪲</h1>
+    <p>Classify insect species using Image, DNA or Environment or All</p>
+    <form action="/predict" method="post" enctype="multipart/form-data">
+      <label>Upload Image:</label>
+      <input type="file" name="file" accept="image/*">
+
+      <label>DNA Barcode Sequence:</label>
+      <textarea name="dna_seq" rows="3" placeholder="e.g. CTTTATACTTTATTTTTGGGGCTTGAGC..."></textarea>
+
+      <label>Environmental Info:</label>
+      <textarea name="env_info" rows="3" placeholder="e.g. Costa Rica, tropical forest, humid..."></textarea>
+
+      <button type="submit">Predict Species</button>
+    </form>
+    <h1>🦋</h1>
+  </div>
+</body>
+</html>
